@@ -1,0 +1,187 @@
+
+  .date-range-picker {
+    width: 320px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    margin-left: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .header button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .header button:hover {
+    background-color: #ddd;
+  }
+  
+  .header span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; 
+    text-align: center;
+  }
+  
+  th, td {
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  th {
+    color: #393737;
+  }
+
+  td {
+    width: 30px;
+    height: 30px;
+    padding-top: 8px;
+    padding-bottom: 0%;
+  }
+  
+  .day {
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+  }
+  
+  .day:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .disabled {
+    color: #ccc;
+    pointer-events: none;
+    background-color: transparent;
+  }
+  
+  .weekend {
+    color: red;
+  }
+  
+  .weekend.disabled {
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  .weekend.selected {
+    background-color: #ccc;
+    color: white;
+  }
+
+  .selected {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .selected:hover {
+    background-color: #45a049;
+  }
+
+  .not-current-month {
+    color: #aaa;
+  }
+  
+  .predefined-ranges {
+    margin-top: 10px;
+  }
+  
+  .predefined-ranges button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .predefined-ranges button:hover {
+    background-color: #ddd;
+  }
+
+  .year-span {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 4px;
+    color: #4a4949;
+    transition: background-color 0.8s ease;
+  }
+  
+  .year-span:hover,
+  .year-span:active {
+    background-color: #d7f5fa;
+    cursor: pointer;
+  }
+  .carrot-icon {
+    cursor: pointer;
+    font-size: 14px;
+    color: #4a4949;
+    padding: 6px;
+    border-radius: 4px;
+  }
+  .carrot-icon:hover {
+    background-color: #d7f5fa;
+    cursor: pointer;
+  }
+  
+  .year-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: -10px;
+    margin-left: 120px;
+    border-radius: 4px;
+    padding: 6px;
+  }
+  
+  .year-option {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .year-option:hover {
+    background-color: #f0f0f0;
+  }  
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:last-child {
+    margin-right: 0;
+  }
