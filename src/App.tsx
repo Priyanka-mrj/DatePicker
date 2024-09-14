@@ -1,5 +1,5 @@
 import React from 'react';
-import DateRangeBox from './components/DateRangeBox'; // Adjust the path as needed
+import DateRangeBox from './components/DateRangeBox'
 
 const App: React.FC = () => {
   return (
