@@ -15,9 +15,15 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges, onC
   const [currentYear, setCurrentYear] = useState<number>(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState<number>(new Date().getMonth());
   const [isYearDropdownVisible, setYearDropdownVisible] = useState(false);
-  const availableYears = Array.from({ length: 21 }, (_, i) => currentYear - 10 + i);
+  const runningYear = new Date().getFullYear()
+  const availableYears = Array.from({ length: runningYear - 1900 + 1 }, (_, i) => 1900 + i);
   const handleYearSelect = (year: number) => {
     setCurrentYear(year);
+    setYearDropdownVisible(false);
+  };
+
+  const handleMonthSelect = (month: number) => {
+    setCurrentMonth(month);
     setYearDropdownVisible(false);
   };
 
@@ -191,10 +197,25 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges, onC
 
       {/* Year dropdown */}
       {isYearDropdownVisible && (
-        <div className="year-dropdown">
+        <div className="dropdown">
           {availableYears.map((year) => (
-            <div key={year} className="year-option" onClick={() => handleYearSelect(year)}>
-              {year}
+            <div key={year} className="dropdown-year">
+              <div className="year-label">{year}</div>
+              <div className="months-grid">
+                {Array.from({ length: 12 }, (_, index) => (
+                  <div
+                    key={index}
+                    className={`month-item ${currentYear === year && currentMonth === index ? "selectyear" : ""
+                      }`}
+                    onClick={() => {
+                      handleYearSelect(year);
+                      handleMonthSelect(index);
+                    }}
+                  >
+                    {new Date(0, index).toLocaleString("default", { month: "short" })}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

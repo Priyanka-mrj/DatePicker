@@ -4,7 +4,7 @@ import DateRangeBox from './components/DateRangeBox'
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Weekday Date Range Picker</h1>
+      <h1 style={{ marginLeft: 20 }}>Weekday Date Range Picker</h1>
       <DateRangeBox />
     </div>
   );

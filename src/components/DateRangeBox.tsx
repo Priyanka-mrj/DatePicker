@@ -6,14 +6,13 @@ import "./DateRangeBox.css";
 
 const DateRangeBox: React.FC = () => {
     const [isCalendarOpen, setCalendarOpen] = useState(false);
-    const [selectedRange, setSelectedRange] = useState<string>("yyyy-MM-dd ~ yyyy-MM-dd");
+    const [selectedRange, setSelectedRange] = useState<string>("yyyy-MM-dd - yyyy-MM-dd");
     const [weekends, setWeekends] = useState<string>(""); // weekends is an array of strings
 
     const handleDateRangeChange = (range: [string, string], weekends: string[]) => {
-        console.log("rangeeeeeeee", range, weekends);
         const weekendsCommaSeparated = weekends.join(", ");
         setWeekends(weekendsCommaSeparated);
-        setSelectedRange(`${range[0]} ~ ${range[1]}`);
+        setSelectedRange(`${range[0]} - ${range[1]}`);
     };
 
     const toggleCalendar = () => {
@@ -35,8 +34,11 @@ const DateRangeBox: React.FC = () => {
                     <DateRangePicker predefinedRanges={[]} onChange={handleDateRangeChange} clickOkay={handleOkClick} />
                 </div>
             )}
-            {weekends && !isCalendarOpen && (
-                <p>{`Weekends : ${weekends}`}</p>
+            {!isCalendarOpen && (
+                <>
+                    {selectedRange !== "yyyy-MM-dd - yyyy-MM-dd" && <p>{`Selected Dates : ${selectedRange}`}</p>}
+                    {weekends && <p>{`Weekends : [${weekends}]`}</p>}
+                </>
             )}
         </div>
     );
